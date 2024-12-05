@@ -45,6 +45,7 @@ const NavigateMenu = ({ selectedMenu, onChangeMenu }: NavigateMenuType) => {
   const [facebookImg, setFacebookImg] = useState<string>(SOne_index_btfacebook);
   const [twitterImg, setTwitterImg] = useState<string>(SOne_index_bttwitter);
   const [youtubeImg, setYoutubeImg] = useState<string>(SOne_index_btyoutube);
+  const [hoveredKey, setHoveredKey] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col items-center justify-between w-full h-auto px-2 py-2 rounded-md md:flex-row bg-dark">
@@ -57,18 +58,16 @@ const NavigateMenu = ({ selectedMenu, onChangeMenu }: NavigateMenuType) => {
           >
             <img
               src={
-                selectedMenu === menuItem.key
+                selectedMenu === menuItem.key || hoveredKey === menuItem.key
                   ? SOne_index_menu02
                   : SOne_index_menu01
               }
               width={20}
               height={20}
-              className={
-                selectedMenu === menuItem.key
-                  ? "cursor-pointer"
-                  : "grayscale hover:grayscale-0 cursor-pointer"
-              }
+              className="cursor-pointer"
               alt="menu"
+              onMouseEnter={() => setHoveredKey(menuItem.key)}
+              onMouseLeave={() => setHoveredKey(null)}
             />
             <p
               className={

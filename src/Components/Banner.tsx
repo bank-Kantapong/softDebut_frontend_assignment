@@ -5,7 +5,7 @@ import SOne_index_pic02 from "../Assets/SOne_index_pic02.jpg";
 
 const Banner = () => {
   return (
-    <div className="flex flex-col items-end justify-center w-full bg-black bg-no-repeat bg-banner h-300">
+    <div className="flex flex-col items-end justify-center w-full bg-no-repeat bg-[#000000] bg-banner h-300">
       <div className="flex flex-col items-center gap-2 pe-3">
         <img
           src={SOne_index_arrowup}
